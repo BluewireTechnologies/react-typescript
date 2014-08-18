@@ -28,7 +28,7 @@ var invariant = require('react/lib/invariant'),
     ReactPropTypeLocations = require('react/lib/ReactPropTypeLocations'), 
     ReactPropTypeLocationNames = require('react/lib/ReactPropTypeLocationNames'),
     merge = require('react/lib/merge'),
-    objMap = require('react/lib/objMap');
+    mapObject = require('react/lib/mapObject');
 
 var SpecPolicy = keyMirror({
   DEFINE_ONCE: null,
@@ -217,7 +217,7 @@ function mergeObjectsWithNoDuplicateKeys(one, two) {
     'mergeObjectsWithNoDuplicateKeys(): Cannot merge non-objects'
   );
 
-  objMap(two, function(value, key) {
+  mapObject(two, function(value, key) {
     invariant(
       one[key] === undefined,
       'mergeObjectsWithNoDuplicateKeys(): ' +
